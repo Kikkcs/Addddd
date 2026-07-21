@@ -1,0 +1,8 @@
+[
+  {
+    "orderId": "7096914510101",
+    "eventType": "ORDER_PLACED",
+    "decision": "SEND_EMAIL",
+    "actionedAt": "2026-07-21T11:26:05.640Z"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "t1",
+    "type": "ORDER_DELIVERED",
+    "subject": "Your Adeaur Order has arrived!",
+    "body": "Hi {customer_name},\n\nYour order {order_number} has been delivered. Enjoy!\n\n- Adeaur Team"
+  },
+  {
+    "id": "t2",
+    "type": "ORDER_PLACED",
+    "subject": "Order Confirmation",
+    "body": "Hi {customer_name},\n\nWe received your order {order_number}. We will notify you when it ships."
+  },
+  {
+    "id": "t3",
+    "type": "ORDER_CANCELLED",
+    "subject": "Order Cancelled",
+    "body": "Hi {customer_name},\n\nYour order {order_number} has been cancelled successfully."
+  }
+]

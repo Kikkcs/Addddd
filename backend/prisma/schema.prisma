@@ -1,0 +1,159 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// ---------------------------------------------------------
+// 1. SYSTEM USERS (Dashboard Access)
+// ---------------------------------------------------------
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String   
+  role      String   @default("ADMIN")
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ---------------------------------------------------------
+// 2. E-COMMERCE DATA (Synced from Shopify)
+// ---------------------------------------------------------
+model Customer {
+  id               String   @id @default(uuid())
+  shopifyId        String   @unique
+  firstName        String?
+  lastName         String?
+  email            String?
+  phone            String?
+  totalSpent       Float    @default(0.0)
+  ordersCount      Int      @default(0)
+  
+  orders           Order[]
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Product {
+  id               String   @id @default(uuid())
+  shopifyId        String   @unique
+  title            String
+  vendor           String?
+  productType      String?
+  status           String   @default("ACTIVE")
+  
+  variants         ProductVariant[]
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model ProductVariant {
+  id               String   @id @default(uuid())
+  shopifyId        String   @unique
+  productId        String
+  title            String
+  sku              String?
+  price            Float
+  inventoryCount   Int      @default(0) 
+  
+  product          Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  lineItems        OrderLineItem[]
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+// ---------------------------------------------------------
+// 3. CORE BUSINESS DATA (Orders & Analytics)
+// ---------------------------------------------------------
+model Order {
+  id               String   @id @default(uuid())
+  shopifyId        String   @unique
+  orderNumber      String   @unique 
+  customerId       String?
+  
+  totalPrice       Float
+  subtotalPrice    Float
+  totalTax         Float
+  totalDiscounts   Float
+  currency         String   @default("INR")
+  
+  paymentStatus    String   
+  paymentMethod    String?  
+  fulfillmentStatus String  
+  
+  customer         Customer? @relation(fields: [customerId], references: [id])
+  lineItems        OrderLineItem[]
+  shipment         Shipment? 
+  
+  orderPlacedAt    DateTime
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  
+  notifications    NotificationLog[]
+}
+
+model OrderLineItem {
+  id               String   @id @default(uuid())
+  orderId          String
+  variantId        String?
+  title            String
+  quantity         Int
+  price            Float
+  
+  order            Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  variant          ProductVariant? @relation(fields: [variantId], references: [id])
+}
+
+// ---------------------------------------------------------
+// 4. LOGISTICS (Synced from Delhivery)
+// ---------------------------------------------------------
+model Shipment {
+  id               String   @id @default(uuid())
+  orderId          String   @unique
+  waybill          String   @unique 
+  
+  status           String   
+  courierName      String   @default("Delhivery")
+  
+  dispatchedAt     DateTime?
+  deliveredAt      DateTime?
+  returnedAt       DateTime? 
+  
+  order            Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+// ---------------------------------------------------------
+// 5. NOTIFICATION ENGINE (Event Log & Templates)
+// ---------------------------------------------------------
+
+model NotificationTemplate {
+  id          String   @id @default(uuid())
+  name        String   @unique // e.g., "ORDER_CONFIRMATION_EMAIL"
+  channel     String   // "EMAIL" or "WHATSAPP"
+  subject     String?  // Only for email
+  body        String   // Accepts variables like {{customer_name}}
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model NotificationLog {
+  id          String   @id @default(uuid())
+  orderId     String?  // Relation to the order triggering the event
+  channel     String   // "EMAIL" or "WHATSAPP"
+  recipient   String   // Email address or phone number
+  type        String   // Event type: e.g., "ORDER_SHIPPED"
+  status      String   // "PENDING", "SENT", "FAILED"
+  error       String?  // Stack trace if failed
+  sentAt      DateTime?
+  
+  order       Order?   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
