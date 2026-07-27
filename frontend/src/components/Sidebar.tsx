@@ -127,18 +127,18 @@ export default function Sidebar({
         {/* User profile section at the very bottom */}
         {sidebarExpanded ? (
           <div className="flex items-center gap-3 p-2 mt-2 bg-slate-50 dark:bg-slate-900/40 rounded-lg border border-slate-100 dark:border-slate-800/60" id="user-profile-widget">
-            <div className="w-8 h-8 rounded-full bg-slate-950 text-white dark:bg-slate-800 text-xs font-bold flex items-center justify-center shrink-0" id="user-avatar-sm">
-              SM
+            <div className="w-8 h-8 rounded-full bg-indigo-600 text-white text-xs font-bold flex items-center justify-center shrink-0" id="user-avatar-sm">
+              AD
             </div>
             <div className="overflow-hidden" id="user-info-text">
-              <p className="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">Sumit Mehra</p>
-              <p className="text-[10px] text-slate-500 truncate">sumit@adeaur.com</p>
+              <p className="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">Adeaur Admin</p>
+              <p className="text-[10px] text-slate-500 truncate">admin@adeaur.com</p>
             </div>
           </div>
         ) : (
           <div className="flex justify-center p-2 mt-2" id="user-profile-avatar-only">
-            <div className="w-8 h-8 rounded-full bg-slate-950 text-white dark:bg-slate-800 text-xs font-bold flex items-center justify-center cursor-pointer shadow-sm hover:scale-105 transition-all" id="user-avatar-collapsed">
-              SM
+            <div className="w-8 h-8 rounded-full bg-indigo-600 text-white text-xs font-bold flex items-center justify-center cursor-pointer shadow-sm hover:scale-105 transition-all" id="user-avatar-collapsed">
+              AD
             </div>
           </div>
         )}

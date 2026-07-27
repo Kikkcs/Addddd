@@ -14,6 +14,9 @@ export default function SettingsView() {
   const [inviteEmail, setInviteEmail] = useState('');
   const [inviteRole, setInviteRole] = useState<'Owner' | 'Admin' | 'Sales' | 'Warehouse' | 'Accounts' | 'Support'>('Support');
   const [inviteSuccess, setInviteSuccess] = useState(false);
+  const [inviteLoading, setInviteLoading] = useState(false);
+  const [inviteError, setInviteError] = useState('');
+  const [generatedLink, setGeneratedLink] = useState('');
   const [savingKeys, setSavingKeys] = useState(false);
   const [saveKeysSuccess, setSaveKeysSuccess] = useState(false);
 
@@ -38,17 +41,18 @@ export default function SettingsView() {
     e.preventDefault();
     if (!inviteEmail.trim()) return;
 
+    setInviteLoading(true);
+    setInviteError('');
+    setInviteSuccess(false);
+
     const emailParts = inviteEmail.split('@');
     const nameStr = emailParts[0].split('.').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
-
-    // Hardcoded default password for simplicity of operations provisioning
-    const password = 'changeme123';
 
     try {
       const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: inviteEmail, name: nameStr, role: inviteRole, password })
+        body: JSON.stringify({ email: inviteEmail, name: nameStr, role: inviteRole })
       });
       const data = await response.json();
 
@@ -63,14 +67,18 @@ export default function SettingsView() {
         };
 
         setUsersList(prev => [...prev, newUser]);
+        if (data.inviteLink) {
+          setGeneratedLink(data.inviteLink);
+        }
         setInviteEmail('');
         setInviteSuccess(true);
-        setTimeout(() => setInviteSuccess(false), 3000);
       } else {
-        alert(data.message || 'Error occurred registering user.');
+        setInviteError(data.message || 'Error occurred registering user.');
       }
     } catch {
-      alert("Error tracking User Register API.");
+      setInviteError("Failed to connect to backend server.");
+    } finally {
+      setInviteLoading(false);
     }
   };
 
@@ -109,10 +117,35 @@ export default function SettingsView() {
               </div>
             </div>
 
+            {inviteError && (
+              <div className="p-3 rounded-lg bg-rose-50 text-rose-700 dark:bg-rose-950/40 dark:text-rose-400 text-xs font-medium" id="invite-error-alert">
+                {inviteError}
+              </div>
+            )}
+
             {inviteSuccess && (
-              <div className="p-3 rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 text-xs flex items-center gap-2" id="invite-success-alert">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Team member added! Default password assigned: <strong className="font-mono underline">changeme123</strong></span>
+              <div className="p-3.5 rounded-lg bg-emerald-50 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300 text-xs space-y-1.5" id="invite-success-alert">
+                <div className="flex items-center gap-2 font-bold">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <span>Invitation dispatched! Invited member can now set up their custom password.</span>
+                </div>
+                {generatedLink && (
+                  <div className="flex items-center gap-2 pt-1 border-t border-emerald-200/50 dark:border-emerald-800/50">
+                    <span className="text-[10px] font-mono text-slate-500">Password Setup Link:</span>
+                    <input
+                      readOnly
+                      value={generatedLink}
+                      className="flex-1 bg-white dark:bg-slate-900 px-2 py-1 rounded text-[10px] font-mono border border-emerald-300 dark:border-emerald-800"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => navigator.clipboard.writeText(generatedLink)}
+                      className="px-2 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded text-[10px] font-bold cursor-pointer"
+                    >
+                      Copy Link
+                    </button>
+                  </div>
+                )}
               </div>
             )}
 
@@ -150,9 +183,15 @@ export default function SettingsView() {
               <button
                 id="btn-invite-staff"
                 type="submit"
-                className="self-end px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md text-xs font-semibold transition-all cursor-pointer shadow-sm"
+                disabled={inviteLoading}
+                className="self-end px-4 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-md text-xs font-semibold transition-all cursor-pointer shadow-sm flex items-center gap-1.5"
               >
-                Invite Member
+                {inviteLoading ? (
+                  <>
+                    <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                    Sending Invite...
+                  </>
+                ) : 'Invite Member'}
               </button>
             </form>
 
