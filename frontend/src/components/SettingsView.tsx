@@ -159,7 +159,7 @@ export default function SettingsView() {
                 </div>
                 {generatedLink && (
                   <div className="flex items-center gap-2 pt-1 border-t border-emerald-200/50 dark:border-emerald-800/50">
-                    <span className="text-[10px] font-mono text-slate-500">Password Setup Link:</span>
+                    <span className="text-[10px] font-mono text-slate-500">Change Password Link:</span>
                     <input
                       readOnly
                       value={generatedLink}
@@ -242,10 +242,10 @@ export default function SettingsView() {
                       type="button"
                       onClick={() => handleCopyUserLink(user.email, user.id)}
                       className="px-2 py-1 bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded text-[10px] font-semibold transition-all flex items-center gap-1 cursor-pointer"
-                      title="Copy Password Setup Link for this staff member"
+                      title="Copy Change Password Link for this staff member"
                     >
                       <Link className="w-3 h-3 text-indigo-500" />
-                      {copiedUserId === user.id ? 'Copied Link!' : 'Get Setup Link'}
+                      {copiedUserId === user.id ? 'Copied Link!' : 'Change Password'}
                     </button>
 
                     <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-400">
