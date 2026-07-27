@@ -142,9 +142,11 @@ export const localAuthRoutes: FastifyPluginAsync = async (server: FastifyInstanc
             const origin = request.headers.origin || process.env.FRONTEND_URL || 'http://localhost:5173';
             const setupLink = `${origin}/?inviteToken=${encodeURIComponent(inviteToken)}`;
 
+            const senderAddress = process.env.EMAIL_FROM || (process.env.SMTP_USER ? `"Adeaur Operations" <${process.env.SMTP_USER}>` : '"Adeaur Operations" <updates@adeaur.com>');
+
             // Dispatch email in background so endpoint returns instantly
             const mailOptions = {
-                from: process.env.EMAIL_FROM || '"Adeaur Operations" <updates@adeaur.com>',
+                from: senderAddress,
                 to: email,
                 subject: 'Invitation to Join Adeaur Operations - Set Up Your Account',
                 html: `
