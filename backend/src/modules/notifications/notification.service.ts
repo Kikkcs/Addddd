@@ -11,7 +11,7 @@ export class NotificationService {
      */
     public static async scheduleNotification(data: {
         orderId: string,
-        channel: 'EMAIL' | 'WHATSAPP',
+        channel: 'EMAIL',
         recipient: string,
         type: string,
         payload: any

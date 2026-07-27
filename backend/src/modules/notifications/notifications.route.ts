@@ -79,7 +79,7 @@ export async function notificationsRoutes(fastify: FastifyInstance) {
      * POST /api/v1/notifications/action
      * Accepts user's manual authorization to release or kill a notification payload
      */
-    fastify.post('/api/v1/notifications/action', async (req: FastifyRequest<{ Body: { orderId: string, eventType: string, decision: 'SEND_EMAIL' | 'SEND_WHATSAPP' | 'REJECT', recipient: string, payload: string } }>, reply: FastifyReply) => {
+    fastify.post('/api/v1/notifications/action', async (req: FastifyRequest<{ Body: { orderId: string, eventType: string, decision: 'SEND_EMAIL' | 'REJECT', recipient: string, payload: string } }>, reply: FastifyReply) => {
         try {
             const { orderId, eventType, decision, recipient, payload } = req.body;
 
@@ -124,18 +124,6 @@ export async function notificationsRoutes(fastify: FastifyInstance) {
                     } catch (mockErr: any) {
                         console.error('[Diagnostic Error] Ethereal fallback crashed:', mockErr.message);
                     }
-                }
-            } else if (decision === 'SEND_WHATSAPP') {
-                try {
-                    await queue.dispatchNotification({
-                        logId: `log-${Date.now()}`,
-                        channel: 'WHATSAPP',
-                        recipient,
-                        type: eventType,
-                        payload
-                    });
-                } catch (redisErr) {
-                    console.error('[Notification Engine] Redis not active to hold WhatsApp queue.');
                 }
             }
 

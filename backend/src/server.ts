@@ -9,12 +9,10 @@ import { localAuthRoutes } from './modules/auth/local.auth.js';
 import { ordersRoutes } from './modules/orders/orders.route.js';
 import { reportsRoutes } from './modules/reports/reports.route.js';
 import { aiRoutes } from './modules/ai/ai.route.js';
-import { metaRoutes } from './modules/meta/meta.route.js';
 import { notificationsRoutes } from './modules/notifications/notifications.route.js';
 
 // Boot Background Workers (Requires Local Redis)
 import './modules/notifications/email.worker.js';
-// import './modules/notifications/whatsapp.worker.js';
 
 // Highly optimized Fastify server initialization
 const server: FastifyInstance = Fastify({
@@ -58,9 +56,6 @@ async function setupRoutes() {
 
   // AI intelligence routes
   await server.register(aiRoutes);
-
-  // Meta Ads integration routes
-  await server.register(metaRoutes);
 
   // Manual Notification Approval Queue endpoints
   await server.register(notificationsRoutes);

@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
 export const emailWorker = new Worker('NotificationQueue', async (job: Job) => {
     const { logId, channel, recipient, type, payload } = job.data;
 
-    // Safety check: Let WhatsApp worker handle WHATSAPP channels
+    // Safety check: process EMAIL channels
     if (channel !== 'EMAIL') return;
 
     try {

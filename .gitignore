@@ -7,3 +7,4 @@ coverage/
 diagnostic_*.txt
 *.log
 .DS_Store
+error.txt

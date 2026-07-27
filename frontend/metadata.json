@@ -1,0 +1,6 @@
+{
+  "name": "E-Commerce Intelligence Dashboard",
+  "description": "Premium internal operations and analytics dashboard integrating Shopify, Delhivery, and GoKwik data.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
