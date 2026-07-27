@@ -143,10 +143,20 @@ export const localAuthRoutes: FastifyPluginAsync = async (server: FastifyInstanc
                 `
             };
 
-            // Non-blocking email trigger
-            transporter.sendMail(mailOptions).catch(mailErr => {
-                server.log.warn('SMTP Email Dispatch Notice: ' + (mailErr as Error).message);
+            // Construct live transporter using active process.env
+            const activeTransporter = nodemailer.createTransport({
+                host: process.env.SMTP_HOST || 'smtp.sendgrid.net',
+                port: parseInt(process.env.SMTP_PORT || '587'),
+                secure: process.env.SMTP_PORT === '465',
+                auth: (process.env.SMTP_USER || process.env.SMTP_PASS) ? {
+                    user: process.env.SMTP_USER || 'apikey',
+                    pass: process.env.SMTP_PASS || '',
+                } : undefined
             });
+
+            activeTransporter.sendMail(mailOptions)
+                .then(info => console.log('[Invite Email Dispatch SUCCESS] Sent to:', email, 'MessageID:', info.messageId))
+                .catch(err => console.error('[Invite Email Dispatch ERROR] Failed for:', email, 'Error:', err.message));
 
             // Create temporary pending user record in DB with unguessable placeholder password
             const tempHashedPassword = await bcrypt.hash('INVITED_PENDING_' + Math.random(), 10);

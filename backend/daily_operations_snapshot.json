@@ -1,5 +1,451 @@
 [
   {
+    "id": 7113896427797,
+    "admin_graphql_api_id": "gid://shopify/Order/7113896427797",
+    "app_id": 374080995329,
+    "browser_ip": null,
+    "buyer_accepts_marketing": false,
+    "cancel_reason": null,
+    "cancelled_at": null,
+    "cart_token": null,
+    "checkout_id": null,
+    "checkout_token": null,
+    "client_details": null,
+    "closed_at": null,
+    "company": null,
+    "confirmation_number": "8GYZAKIAH",
+    "confirmed": true,
+    "contact_email": "parmagupta1980@gmail.com",
+    "created_at": "2026-07-27T13:46:56+05:30",
+    "currency": "INR",
+    "current_subtotal_price": "999.00",
+    "current_subtotal_price_set": {
+      "shop_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      }
+    },
+    "current_total_additional_fees_set": null,
+    "current_total_discounts": "0.00",
+    "current_total_discounts_set": {
+      "shop_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      }
+    },
+    "current_total_duties_set": null,
+    "current_total_price": "999.00",
+    "current_total_price_set": {
+      "shop_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      }
+    },
+    "current_total_tax": "152.39",
+    "current_total_tax_set": {
+      "shop_money": {
+        "amount": "152.39",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "152.39",
+        "currency_code": "INR"
+      }
+    },
+    "customer_locale": null,
+    "device_id": null,
+    "discount_codes": [],
+    "duties_included": false,
+    "email": "parmagupta1980@gmail.com",
+    "estimated_taxes": false,
+    "financial_status": "pending",
+    "fulfillment_status": null,
+    "landing_site": null,
+    "landing_site_ref": null,
+    "location_id": null,
+    "merchant_business_entity_id": "MTg0MzQwMDQ4MTQ5",
+    "merchant_of_record_app_id": null,
+    "name": "#1438",
+    "note": null,
+    "note_attributes": [
+      {
+        "name": "gokwik_cid",
+        "value": "c708f9e9-74be-4654-8745-a480a234f122"
+      },
+      {
+        "name": "cart_token",
+        "value": "hWNExHYBxByvzG6QwohfyyPs?key=a76814bcc5b6d70651381d526b1f1522"
+      },
+      {
+        "name": "user_agent",
+        "value": "Mozilla/5.0 (Linux; Android 14; CPH2381 Build/UKQ1.230924.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/150.0.7871.55 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/568.0.0.46.74;IABMV/1;]"
+      },
+      {
+        "name": "full_url",
+        "value": "https://e4573f-74.myshopify.com/products/discovery-set-pack-of-6?utm_source=Meta_paid&utm_campaign=AT | Sales_Conversion | TOF | India&utm_medium=Female | Open – Copy&utm_content=Existing Post | Video&utm_term=120243417854580357"
+      },
+      {
+        "name": "customer_ip",
+        "value": "117.99.130.45"
+      },
+      {
+        "name": "utm_source",
+        "value": "Meta_paid"
+      },
+      {
+        "name": "utm_campaign",
+        "value": "AT | Sales_Conversion | TOF | India"
+      },
+      {
+        "name": "utm_medium",
+        "value": "Female | Open – Copy"
+      },
+      {
+        "name": "utm_content",
+        "value": "Existing Post | Video"
+      },
+      {
+        "name": "utm_term",
+        "value": "120243417854580357"
+      }
+    ],
+    "number": 438,
+    "order_number": 1438,
+    "order_status_url": "https://adeaur.com/84340048149/orders/b801a28e317248debf3a7bbef1093b66/authenticate?key=ab9d788fe20324b45955907dc1b5cdaf",
+    "original_total_additional_fees_set": null,
+    "original_total_duties_set": null,
+    "payment_gateway_names": [
+      "cash_on_delivery"
+    ],
+    "phone": "+919034258443",
+    "po_number": null,
+    "presentment_currency": "INR",
+    "processed_at": "2026-07-27T13:46:56+05:30",
+    "reference": null,
+    "referring_site": null,
+    "source_identifier": null,
+    "source_name": "374080995329",
+    "source_url": null,
+    "subtotal_price": "999.00",
+    "subtotal_price_set": {
+      "shop_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      }
+    },
+    "tags": "COD, GoKwik, Medium Risk",
+    "tax_exempt": false,
+    "tax_lines": [
+      {
+        "price": "152.39",
+        "rate": 0.18,
+        "title": "IGST",
+        "price_set": {
+          "shop_money": {
+            "amount": "152.39",
+            "currency_code": "INR"
+          },
+          "presentment_money": {
+            "amount": "152.39",
+            "currency_code": "INR"
+          }
+        },
+        "channel_liable": false
+      }
+    ],
+    "taxes_included": true,
+    "test": false,
+    "token": "b801a28e317248debf3a7bbef1093b66",
+    "total_cash_rounding_payment_adjustment_set": {
+      "shop_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      }
+    },
+    "total_cash_rounding_refund_adjustment_set": {
+      "shop_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      }
+    },
+    "total_discounts": "0.00",
+    "total_discounts_set": {
+      "shop_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      }
+    },
+    "total_line_items_price": "999.00",
+    "total_line_items_price_set": {
+      "shop_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      }
+    },
+    "total_outstanding": "999.00",
+    "total_price": "999.00",
+    "total_price_set": {
+      "shop_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "999.00",
+        "currency_code": "INR"
+      }
+    },
+    "total_shipping_price_set": {
+      "shop_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "0.00",
+        "currency_code": "INR"
+      }
+    },
+    "total_tax": "152.39",
+    "total_tax_set": {
+      "shop_money": {
+        "amount": "152.39",
+        "currency_code": "INR"
+      },
+      "presentment_money": {
+        "amount": "152.39",
+        "currency_code": "INR"
+      }
+    },
+    "total_tip_received": "0.00",
+    "total_weight": 0,
+    "updated_at": "2026-07-27T13:46:57+05:30",
+    "user_id": null,
+    "billing_address": {
+      "first_name": "parma",
+      "address1": "Opp Radha Garments Kurari Muhala Kalka",
+      "phone": "9034258443",
+      "city": "PANCHKULA",
+      "zip": "133302",
+      "province": "Haryana",
+      "country": "India",
+      "last_name": "Gupta",
+      "address2": null,
+      "company": null,
+      "latitude": 30.8386012,
+      "longitude": 76.93845859999999,
+      "name": "parma Gupta",
+      "country_code": "IN",
+      "province_code": "HR"
+    },
+    "customer": {
+      "id": 11240820736277,
+      "created_at": "2026-07-27T13:46:56+05:30",
+      "updated_at": "2026-07-27T13:46:57+05:30",
+      "first_name": "parma",
+      "last_name": "Gupta",
+      "state": "disabled",
+      "note": null,
+      "verified_email": true,
+      "multipass_identifier": null,
+      "tax_exempt": false,
+      "email_marketing_consent": {
+        "state": "subscribed",
+        "opt_in_level": "single_opt_in",
+        "consent_updated_at": "2026-07-27T13:46:57+05:30"
+      },
+      "sms_marketing_consent": null,
+      "tags": "",
+      "email": "parmagupta1980@gmail.com",
+      "phone": null,
+      "currency": "INR",
+      "tax_exemptions": [],
+      "admin_graphql_api_id": "gid://shopify/Customer/11240820736277",
+      "default_address": {
+        "id": 13511471202581,
+        "customer_id": 11240820736277,
+        "first_name": "parma",
+        "last_name": "Gupta",
+        "company": null,
+        "address1": "Opp Radha Garments Kurari Muhala Kalka",
+        "address2": null,
+        "city": "PANCHKULA",
+        "province": "Haryana",
+        "country": "India",
+        "zip": "133302",
+        "phone": "9034258443",
+        "name": "parma Gupta",
+        "province_code": "HR",
+        "country_code": "IN",
+        "country_name": "India",
+        "default": true
+      }
+    },
+    "discount_applications": [],
+    "fulfillments": [],
+    "line_items": [
+      {
+        "id": 16910239760661,
+        "admin_graphql_api_id": "gid://shopify/LineItem/16910239760661",
+        "attributed_staffs": [],
+        "current_quantity": 1,
+        "fulfillable_quantity": 1,
+        "fulfillment_service": "manual",
+        "fulfillment_status": null,
+        "gift_card": false,
+        "grams": 0,
+        "name": "Discovery Set - Pack of 6",
+        "price": "999.00",
+        "price_set": {
+          "shop_money": {
+            "amount": "999.00",
+            "currency_code": "INR"
+          },
+          "presentment_money": {
+            "amount": "999.00",
+            "currency_code": "INR"
+          }
+        },
+        "product_exists": true,
+        "product_id": 9450289365269,
+        "properties": [
+          {
+            "name": "_gk_line_key",
+            "value": "49656337858837:f002c8761eb015a57089456a13b77605"
+          }
+        ],
+        "quantity": 1,
+        "requires_shipping": true,
+        "sku": null,
+        "taxable": true,
+        "title": "Discovery Set - Pack of 6",
+        "total_discount": "0.00",
+        "total_discount_set": {
+          "shop_money": {
+            "amount": "0.00",
+            "currency_code": "INR"
+          },
+          "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "INR"
+          }
+        },
+        "variant_id": 49656337858837,
+        "variant_inventory_management": "shopify",
+        "variant_title": null,
+        "vendor": "Adeaur",
+        "tax_lines": [
+          {
+            "channel_liable": false,
+            "price": "152.39",
+            "price_set": {
+              "shop_money": {
+                "amount": "152.39",
+                "currency_code": "INR"
+              },
+              "presentment_money": {
+                "amount": "152.39",
+                "currency_code": "INR"
+              }
+            },
+            "rate": 0.18,
+            "title": "IGST"
+          }
+        ],
+        "duties": [],
+        "discount_allocations": []
+      }
+    ],
+    "payment_terms": null,
+    "refunds": [],
+    "shipping_address": {
+      "first_name": "parma",
+      "address1": "Opp Radha Garments Kurari Muhala Kalka",
+      "phone": "9034258443",
+      "city": "PANCHKULA",
+      "zip": "133302",
+      "province": "Haryana",
+      "country": "India",
+      "last_name": "Gupta",
+      "address2": null,
+      "company": null,
+      "latitude": 30.8386012,
+      "longitude": 76.93845859999999,
+      "name": "parma Gupta",
+      "country_code": "IN",
+      "province_code": "HR"
+    },
+    "shipping_lines": [
+      {
+        "id": 5741944373525,
+        "carrier_identifier": null,
+        "code": "Shipping",
+        "discounted_price": "0.00",
+        "discounted_price_set": {
+          "shop_money": {
+            "amount": "0.00",
+            "currency_code": "INR"
+          },
+          "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "INR"
+          }
+        },
+        "is_removed": false,
+        "phone": null,
+        "price": "0.00",
+        "price_set": {
+          "shop_money": {
+            "amount": "0.00",
+            "currency_code": "INR"
+          },
+          "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "INR"
+          }
+        },
+        "requested_fulfillment_service_id": null,
+        "source": null,
+        "title": "Shipping",
+        "tax_lines": [],
+        "discount_allocations": []
+      }
+    ],
+    "delhivery_status": "In Transit",
+    "gokwik_rto_risk": "Low",
+    "gokwik_payment": "Verified"
+  },
+  {
     "id": 7112811315477,
     "admin_graphql_api_id": "gid://shopify/Order/7112811315477",
     "app_id": 374080995329,
@@ -546,7 +992,7 @@
     ],
     "delhivery_status": "Manifested",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7112643543317,
@@ -1442,7 +1888,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7110624510229,
@@ -1892,7 +2338,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7110329434389,
@@ -2441,7 +2887,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7109627314453,
@@ -2990,7 +3436,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7109215781141,
@@ -3989,7 +4435,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7109098963221,
@@ -4538,7 +4984,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7109094572309,
@@ -5616,7 +6062,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7107520954645,
@@ -6062,7 +6508,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7107010625813,
@@ -10223,7 +10669,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7103179718933,
@@ -13378,7 +13824,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7101241786645,
@@ -13927,7 +14373,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7100172697877,
@@ -14922,7 +15368,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7098300301589,
@@ -15372,7 +15818,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7098265796885,
@@ -17389,7 +17835,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7096814698773,
@@ -17934,7 +18380,7 @@
     ],
     "delhivery_status": "Pending",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7096331600149,
@@ -18380,7 +18826,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7096185389333,
@@ -19414,7 +19860,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7094017556757,
@@ -20563,7 +21009,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7092962197781,
@@ -21115,7 +21561,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7092679180565,
@@ -21565,7 +22011,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7092098892053,
@@ -22114,7 +22560,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7090243961109,
@@ -23761,7 +24207,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7088447324437,
@@ -25012,7 +25458,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7086891499797,
@@ -25612,7 +26058,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7086367736085,
@@ -26161,7 +26607,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7085438796053,
@@ -26812,7 +27258,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7084825411861,
@@ -27402,7 +27848,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7084791136533,
@@ -28590,7 +29036,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7082688086293,
@@ -31481,7 +31927,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7081627058453,
@@ -33313,7 +33759,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7080813658389,
@@ -33852,7 +34298,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7078053380373,
@@ -36110,7 +36556,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7074773893397,
@@ -37290,7 +37736,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7074335031573,
@@ -37892,7 +38338,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7074231746837,
@@ -38494,7 +38940,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7074029306133,
@@ -40665,7 +41111,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7064578097429,
@@ -41860,7 +42306,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7059087556885,
@@ -42989,7 +43435,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7058041405717,
@@ -44118,7 +44564,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7057439949077,
@@ -45310,7 +45756,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7056643129621,
@@ -47619,7 +48065,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7055974793493,
@@ -48807,7 +49253,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7054200307989,
@@ -51780,7 +52226,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7052131533077,
@@ -52366,7 +52812,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7050717298965,
@@ -55929,7 +56375,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7049188376853,
@@ -56464,7 +56910,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7049103343893,
@@ -57054,7 +57500,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7049049178389,
@@ -58132,7 +58578,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7047773290773,
@@ -59835,7 +60281,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7047280099605,
@@ -60409,7 +60855,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7047253819669,
@@ -62807,7 +63253,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7046907920661,
@@ -63397,7 +63843,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7046905626901,
@@ -65128,7 +65574,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7044711055637,
@@ -67988,7 +68434,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7042399404309,
@@ -70793,7 +71239,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7039643844885,
@@ -71379,7 +71825,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7039228477717,
@@ -71969,7 +72415,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7038067147029,
@@ -73680,7 +74126,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7036985245973,
@@ -74151,7 +74597,7 @@
     "shipping_lines": [],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7035941552405,
@@ -75877,7 +76323,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7035883979029,
@@ -76467,7 +76913,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7035877884181,
@@ -78230,7 +78676,7 @@
     ],
     "delhivery_status": "Not Picked",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7033498435861,
@@ -79308,7 +79754,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7033292456213,
@@ -80619,7 +81065,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7031821992213,
@@ -82385,7 +82831,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7028941947157,
@@ -84631,7 +85077,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7028030505237,
@@ -85233,7 +85679,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7027993379093,
@@ -86416,7 +86862,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7025981784341,
@@ -88736,7 +89182,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7025598857493,
@@ -89865,7 +90311,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7025456447765,
@@ -93200,7 +93646,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7023809102101,
@@ -94270,7 +94716,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7022918566165,
@@ -94872,7 +95318,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7022854897941,
@@ -95407,7 +95853,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7022770913557,
@@ -96067,7 +96513,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7022465581333,
@@ -97190,7 +97636,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7020702368021,
@@ -97812,7 +98258,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7020084756757,
@@ -98362,7 +98808,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7019751145749,
@@ -98914,7 +99360,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7019477926165,
@@ -101428,7 +101874,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7017707110677,
@@ -102115,7 +102561,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7016593850645,
@@ -105017,7 +105463,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7015264551189,
@@ -105570,7 +106016,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7014321094933,
@@ -106624,7 +107070,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7013701845269,
@@ -107177,7 +107623,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7012726440213,
@@ -107678,7 +108124,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7011992305941,
@@ -108680,7 +109126,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7010680013077,
@@ -110861,7 +111307,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7009462812949,
@@ -111915,7 +112361,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7008157303061,
@@ -113520,7 +113966,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7006046519573,
@@ -115274,7 +115720,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7005557063957,
@@ -115850,6 +116296,6 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   }
 ]
