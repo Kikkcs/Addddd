@@ -28,7 +28,9 @@ export default function LoginView({ setAuth }: LoginViewProps) {
 
             if (data.success) {
                 localStorage.setItem('token', data.token);
-                // Optionally save user data: localStorage.setItem('user', JSON.stringify(data.user));
+                if (data.user) {
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                }
                 setAuth(true);
             } else {
                 setError(data.message || 'Invalid credentials');

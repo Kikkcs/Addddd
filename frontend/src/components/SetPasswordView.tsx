@@ -60,6 +60,9 @@ export default function SetPasswordView({ inviteToken, onComplete }: SetPassword
 
             if (data.success && data.token) {
                 localStorage.setItem('token', data.token);
+                if (data.user) {
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                }
                 setSuccess(true);
                 setTimeout(() => {
                     // Remove token from query param and log in
