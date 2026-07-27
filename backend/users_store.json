@@ -1,0 +1,18 @@
+[
+  {
+    "id": "usr-admin",
+    "name": "Adeaur Admin",
+    "email": "admin@adeaur.com",
+    "role": "Admin",
+    "status": "Active",
+    "avatar": "AA"
+  },
+  {
+    "id": "usr-anushka",
+    "name": "Anushka",
+    "email": "anushkahouseofadeaur@gmail.com",
+    "role": "Sales",
+    "status": "Active",
+    "avatar": "AN"
+  }
+]
