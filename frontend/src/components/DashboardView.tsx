@@ -10,6 +10,7 @@ import {
 } from 'recharts';
 import { kpis, categoryShareData, courierPerformanceData, paymentDistributionData, products, askAiLibrary } from '../data';
 import { Order, Product } from '../types';
+import { API_BASE_URL } from '../config';
 
 interface DashboardViewProps {
   setActiveTab: (tab: string) => void;
@@ -51,9 +52,9 @@ export default function DashboardView({
     const safeRange = encodeURIComponent(dateRange);
 
     Promise.all([
-      fetch(`http://localhost:5000/api/v1/analytics/kpis?range=${safeRange}`).then(res => res.json()),
-      fetch(`http://localhost:5000/api/v1/analytics/charts?range=${safeRange}`).then(res => res.json()),
-      fetch(`http://localhost:5000/api/v1/orders?range=${safeRange}`).then(res => res.json())
+      fetch(`${API_BASE_URL}/api/v1/analytics/kpis?range=${safeRange}`).then(res => res.json()),
+      fetch(`${API_BASE_URL}/api/v1/analytics/charts?range=${safeRange}`).then(res => res.json()),
+      fetch(`${API_BASE_URL}/api/v1/orders?range=${safeRange}`).then(res => res.json())
     ])
       .then(([kpisResult, chartsResult, ordersResult]) => {
         if (kpisResult.success && kpisResult.data) {
@@ -97,7 +98,7 @@ export default function DashboardView({
     setAiLoading(true);
     setAiQuery(''); // clear the input immediately after sending
 
-    fetch('http://localhost:5000/api/v1/ai/ask', {
+    fetch(`${API_BASE_URL}/api/v1/ai/ask`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question, dateRange })
@@ -125,7 +126,7 @@ export default function DashboardView({
 
     if (format === 'CSV' || format === 'Excel') {
       // Download real CSV from backend
-      fetch(`http://localhost:5000/api/v1/reports/export?format=csv&range=${safeRange}&type=Financial`)
+      fetch(`${API_BASE_URL}/api/v1/reports/export?format=csv&range=${safeRange}&type=Financial`)
         .then(res => res.blob())
         .then(blob => {
           const url = window.URL.createObjectURL(blob);
@@ -161,7 +162,7 @@ export default function DashboardView({
         });
     } else {
       // PDF: download JSON report and format as readable text file
-      fetch(`http://localhost:5000/api/v1/reports/export?format=json&range=${safeRange}&type=Executive`)
+      fetch(`${API_BASE_URL}/api/v1/reports/export?format=json&range=${safeRange}&type=Executive`)
         .then(res => res.json())
         .then(result => {
           if (result.success && result.report) {

@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { savedReports } from '../data';
 import { SavedReport } from '../types';
+import { API_BASE_URL } from '../config';
 
 export default function ReportsView() {
   const [reportsList, setReportsList] = useState<SavedReport[]>(savedReports);
@@ -166,7 +167,7 @@ export default function ReportsView() {
                   <button
                     id={`btn-download-report-${rep.id}`}
                     onClick={() => {
-                      fetch(`http://localhost:5000/api/v1/reports/export?format=csv&range=Last%2030%20Days&type=${rep.type}`)
+                      fetch(`${API_BASE_URL}/api/v1/reports/export?format=csv&range=Last%2030%20Days&type=${rep.type}`)
                         .then(res => res.blob())
                         .then(blob => {
                           const url = window.URL.createObjectURL(blob);

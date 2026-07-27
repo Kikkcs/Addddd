@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Bell, Activity, ShieldAlert, Mail, Send, CheckCircle2, RotateCcw, AlertTriangle } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function NotificationsView() {
     const [activeTab, setActiveTab] = useState<'monitor' | 'templates'>('monitor');
@@ -8,7 +9,7 @@ export default function NotificationsView() {
 
     React.useEffect(() => {
         if (activeTab === 'templates') {
-            fetch('http://localhost:5000/api/v1/notifications/templates')
+            fetch(`${API_BASE_URL}/api/v1/notifications/templates`)
                 .then(res => res.json())
                 .then(result => {
                     if (result.success) setTemplates(result.data);
@@ -20,7 +21,7 @@ export default function NotificationsView() {
     const handleSaveTemplate = async (template: any) => {
         setSavingId(template.id);
         try {
-            await fetch('http://localhost:5000/api/v1/notifications/templates', {
+            await fetch(`${API_BASE_URL}/api/v1/notifications/templates`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(template)

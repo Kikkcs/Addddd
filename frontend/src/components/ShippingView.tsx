@@ -8,6 +8,7 @@ import {
 } from 'recharts';
 import { courierPerformanceData, recentOrders } from '../data';
 import { Order } from '../types';
+import { API_BASE_URL } from '../config';
 
 export default function ShippingView({ dateRange }: { dateRange?: string }) {
   const [shippingLedger, setShippingLedger] = useState<Order[]>(recentOrders);
@@ -16,7 +17,7 @@ export default function ShippingView({ dateRange }: { dateRange?: string }) {
   // Fetch true live orders from our Backend API
   React.useEffect(() => {
     const safeRange = encodeURIComponent(dateRange || 'Last 30 Days');
-    fetch(`http://localhost:5000/api/v1/orders?range=${safeRange}`)
+    fetch(`${API_BASE_URL}/api/v1/orders?range=${safeRange}`)
       .then(res => res.json())
       .then(result => {
         if (result.success && result.data) {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Lock, Mail, ArrowRight, ShieldCheck } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 interface LoginViewProps {
     setAuth: (val: boolean) => void;
@@ -17,7 +18,7 @@ export default function LoginView({ setAuth }: LoginViewProps) {
         setLoading(true);
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })

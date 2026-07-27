@@ -5,6 +5,7 @@ import {
   ExternalLink, ChevronRight, AlertCircle, Sparkles, Send
 } from 'lucide-react';
 import { Order } from '../types';
+import { API_BASE_URL } from '../config';
 
 interface OrdersViewProps {
   selectedOrder: Order | null;
@@ -27,7 +28,7 @@ export default function OrdersView({
   // Fetch true live orders from our Backend API connected to Shopify
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5000/api/v1/orders?range=${encodeURIComponent(dateRange)}`)
+    fetch(`${API_BASE_URL}/api/v1/orders?range=${encodeURIComponent(dateRange)}`)
       .then(res => res.json())
       .then(result => {
         if (result.success && result.data) {

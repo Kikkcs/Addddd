@@ -4,6 +4,7 @@ import {
   Check, Store, Clock, RefreshCw, X, AlertCircle, Info, Inbox, CheckCircle2
 } from 'lucide-react';
 import { Notification, User } from '../types';
+import { API_BASE_URL } from '../config';
 
 interface TopbarProps {
   activeTab: string;
@@ -41,7 +42,7 @@ export default function Topbar({
   // Dynamically fetch pending approvals strictly when opening the panel
   useEffect(() => {
     if (showNotifications) {
-      fetch('http://localhost:5000/api/v1/notifications/pending')
+      fetch(`${API_BASE_URL}/api/v1/notifications/pending`)
         .then(res => res.json())
         .then(result => {
           if (result.success && result.pending) {
@@ -57,7 +58,7 @@ export default function Topbar({
     setPendingApprovals(prev => prev.filter(p => p.id !== approvalId));
 
     try {
-      await fetch('http://localhost:5000/api/v1/notifications/action', {
+      await fetch(`${API_BASE_URL}/api/v1/notifications/action`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ orderId, eventType, decision, recipient: recipientEmail, payload })

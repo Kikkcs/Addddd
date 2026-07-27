@@ -8,6 +8,7 @@ import {
 } from 'recharts';
 import { inventoryTrendData } from '../data';
 import { Product } from '../types';
+import { API_BASE_URL } from '../config';
 
 export default function InventoryView() {
   const [skuCatalog, setSkuCatalog] = useState<Product[]>([]);
@@ -15,7 +16,7 @@ export default function InventoryView() {
   const [statusFilter, setStatusFilter] = useState('All');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/v1/products')
+    fetch(`${API_BASE_URL}/api/v1/products`)
       .then(res => res.json())
       .then(result => {
         if (result.success && result.data) {

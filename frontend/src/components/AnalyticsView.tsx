@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RefreshCw } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 import {
     ResponsiveContainer, PieChart, Pie, Cell, Tooltip
 } from 'recharts';
@@ -27,8 +28,8 @@ export default function AnalyticsView({ COLORS, renderPieTooltip, paymentDistrib
         const safeRange = encodeURIComponent(dateRange);
 
         Promise.all([
-            fetch('http://localhost:5000/api/v1/products').then(r => r.json()),
-            fetch(`http://localhost:5000/api/v1/analytics/kpis?range=${safeRange}`).then(r => r.json())
+            fetch(`${API_BASE_URL}/api/v1/products`).then(r => r.json()),
+            fetch(`${API_BASE_URL}/api/v1/analytics/kpis?range=${safeRange}`).then(r => r.json())
         ])
             .then(([productsResult, kpisResult]) => {
                 // Build category distribution from live products

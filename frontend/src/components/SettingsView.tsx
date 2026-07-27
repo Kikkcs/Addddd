@@ -4,6 +4,7 @@ import {
   Trash2, User, Eye, EyeOff, Save, CheckCircle2, Lock
 } from 'lucide-react';
 import { User as UserType } from '../types';
+import { API_BASE_URL } from '../config';
 
 export default function SettingsView() {
   const [usersList, setUsersList] = useState<UserType[]>([]);
@@ -17,7 +18,7 @@ export default function SettingsView() {
   const [saveKeysSuccess, setSaveKeysSuccess] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/users')
+    fetch(`${API_BASE_URL}/api/users`)
       .then(res => res.json())
       .then(data => {
         if (data.success && data.data) {
@@ -44,7 +45,7 @@ export default function SettingsView() {
     const password = 'changeme123';
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: inviteEmail, name: nameStr, role: inviteRole, password })
