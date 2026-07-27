@@ -48,12 +48,17 @@ export default function SettingsView() {
     const emailParts = inviteEmail.split('@');
     const nameStr = emailParts[0].split('.').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: inviteEmail, name: nameStr, role: inviteRole })
+        body: JSON.stringify({ email: inviteEmail, name: nameStr, role: inviteRole }),
+        signal: controller.signal
       });
+      clearTimeout(timeoutId);
       const data = await response.json();
 
       if (data.success) {
@@ -75,9 +80,14 @@ export default function SettingsView() {
       } else {
         setInviteError(data.message || 'Error occurred registering user.');
       }
-    } catch {
-      setInviteError("Failed to connect to backend server.");
+    } catch (err: any) {
+      if (err.name === 'AbortError') {
+        setInviteError("Request timed out. Server taking longer than expected.");
+      } else {
+        setInviteError("Failed to connect to backend server.");
+      }
     } finally {
+      clearTimeout(timeoutId);
       setInviteLoading(false);
     }
   };

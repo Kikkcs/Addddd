@@ -127,27 +127,26 @@ export const localAuthRoutes: FastifyPluginAsync = async (server: FastifyInstanc
             const origin = request.headers.origin || process.env.FRONTEND_URL || 'http://localhost:5173';
             const setupLink = `${origin}/?inviteToken=${encodeURIComponent(inviteToken)}`;
 
-            // Attempt to send email via SMTP
-            try {
-                if (process.env.SMTP_PASS) {
-                    await transporter.sendMail({
-                        from: process.env.EMAIL_FROM || '"Adeaur Operations" <updates@adeaur.com>',
-                        to: email,
-                        subject: 'Invitation to Join Adeaur Operations - Set Up Your Account',
-                        html: `
-                            <div style="font-family: sans-serif; max-width: 500px; margin: auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 10px;">
-                                <h2 style="color: #0f172a;">You are invited to join Adeaur Operations</h2>
-                                <p style="color: #475569;">You have been assigned the <strong>${role || 'Support'}</strong> role.</p>
-                                <p style="color: #475569;">Please click the button below to set up your account password of your own choice:</p>
-                                <a href="${setupLink}" style="display: inline-block; padding: 12px 24px; background-color: #4f46e5; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px;">Set Up Your Password</a>
-                                <p style="color: #94a3b8; font-size: 12px; margin-top: 20px;">Link valid for 7 days. If you did not expect this invitation, please ignore this email.</p>
-                            </div>
-                        `
-                    });
-                }
-            } catch (mailErr) {
+            // Dispatch email in background so endpoint returns instantly
+            const mailOptions = {
+                from: process.env.EMAIL_FROM || '"Adeaur Operations" <updates@adeaur.com>',
+                to: email,
+                subject: 'Invitation to Join Adeaur Operations - Set Up Your Account',
+                html: `
+                    <div style="font-family: sans-serif; max-width: 500px; margin: auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 10px;">
+                        <h2 style="color: #0f172a;">You are invited to join Adeaur Operations</h2>
+                        <p style="color: #475569;">You have been assigned the <strong>${role || 'Support'}</strong> role.</p>
+                        <p style="color: #475569;">Please click the button below to set up your account password of your own choice:</p>
+                        <a href="${setupLink}" style="display: inline-block; padding: 12px 24px; background-color: #4f46e5; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px;">Set Up Your Password</a>
+                        <p style="color: #94a3b8; font-size: 12px; margin-top: 20px;">Link valid for 7 days. If you did not expect this invitation, please ignore this email.</p>
+                    </div>
+                `
+            };
+
+            // Non-blocking email trigger
+            transporter.sendMail(mailOptions).catch(mailErr => {
                 server.log.warn('SMTP Email Dispatch Notice: ' + (mailErr as Error).message);
-            }
+            });
 
             // Create temporary pending user record in DB with unguessable placeholder password
             const tempHashedPassword = await bcrypt.hash('INVITED_PENDING_' + Math.random(), 10);
