@@ -12,9 +12,6 @@ import { reportsRoutes } from './modules/reports/reports.route.js';
 import { aiRoutes } from './modules/ai/ai.route.js';
 import { notificationsRoutes } from './modules/notifications/notifications.route.js';
 
-// Boot Background Workers (Requires Local Redis)
-import './modules/notifications/email.worker.js';
-
 // Highly optimized Fastify server initialization
 const server: FastifyInstance = Fastify({
   logger: {
@@ -91,9 +88,10 @@ async function startServer() {
     await server.listen({ port: PORT, host: '0.0.0.0' });
     server.log.info(`Server running at http://localhost:${PORT}`);
 
-    // Boot background sync
+    // Boot background workers non-blockingly
     setTimeout(async () => {
       try {
+        await import('./modules/notifications/email.worker.js').catch(e => console.warn('Email worker notice:', e.message));
         const { SyncService } = await import('./modules/sync/sync.service.js');
         const syncer = SyncService.getInstance();
         // Run robust background sync exactly once every day (24 hours) as requested
@@ -101,7 +99,7 @@ async function startServer() {
         // Fire initial sync immediately to compile the core snapshot lake
         syncer.runDailyGlobalSync();
       } catch (e) {
-        console.error('Failed to init sync service:', e);
+        console.error('Failed to init background services:', e);
       }
     }, 2000);
   } catch (err) {
