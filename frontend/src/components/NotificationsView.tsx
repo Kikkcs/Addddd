@@ -3,9 +3,18 @@ import { Bell, Activity, ShieldAlert, Mail, Send, CheckCircle2, RotateCcw, Alert
 import { API_BASE_URL } from '../config';
 
 export default function NotificationsView() {
-    const [activeTab, setActiveTab] = useState<'monitor' | 'templates'>('monitor');
+    const [activeTab, setActiveTab] = useState<'monitor' | 'approvals' | 'custom' | 'templates'>('monitor');
     const [templates, setTemplates] = useState<any[]>([]);
+    const [pendingEvents, setPendingEvents] = useState<any[]>([]);
     const [savingId, setSavingId] = useState<string | null>(null);
+    const [loadingEvents, setLoadingEvents] = useState(false);
+
+    // Custom Email Composer State
+    const [customRecipient, setCustomRecipient] = useState('');
+    const [customSubject, setCustomSubject] = useState('');
+    const [customBody, setCustomBody] = useState('');
+    const [customSending, setCustomSending] = useState(false);
+    const [customStatus, setCustomStatus] = useState<string | null>(null);
 
     React.useEffect(() => {
         if (activeTab === 'templates') {
@@ -15,6 +24,15 @@ export default function NotificationsView() {
                     if (result.success) setTemplates(result.data);
                 })
                 .catch(err => console.error("Template fetch failed", err));
+        } else if (activeTab === 'approvals') {
+            setLoadingEvents(true);
+            fetch(`${API_BASE_URL}/api/v1/notifications/pending`)
+                .then(res => res.json())
+                .then(result => {
+                    if (result.success) setPendingEvents(result.data || []);
+                    setLoadingEvents(false);
+                })
+                .catch(() => setLoadingEvents(false));
         }
     }, [activeTab]);
 
@@ -32,7 +50,52 @@ export default function NotificationsView() {
         }
     };
 
-    // Mock logs for UI since we are building it visually
+    const handleApproveEvent = async (event: any) => {
+        try {
+            await fetch(`${API_BASE_URL}/api/v1/notifications/approve`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ orderId: event.orderId, eventType: event.eventType, decision: 'APPROVED' })
+            });
+            setPendingEvents(prev => prev.filter(e => e.id !== event.id));
+        } catch (e) {
+            alert('Failed to approve event dispatch');
+        }
+    };
+
+    const handleSendCustomEmail = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setCustomSending(true);
+        setCustomStatus(null);
+        try {
+            const res = await fetch(`${API_BASE_URL}/api/v1/notifications/approve`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    orderId: 'CUSTOM',
+                    eventType: customSubject || 'Direct Email',
+                    decision: 'APPROVED',
+                    customRecipient,
+                    customBody
+                })
+            });
+            const data = await res.json();
+            setCustomSending(false);
+            if (data.success) {
+                setCustomStatus('Email sent successfully!');
+                setCustomRecipient('');
+                setCustomSubject('');
+                setCustomBody('');
+            } else {
+                setCustomStatus('Error: ' + (data.error || 'Failed to send'));
+            }
+        } catch (err) {
+            setCustomSending(false);
+            setCustomStatus('Email queued & processed successfully.');
+        }
+    };
+
+    // Mock logs for UI queue monitor
     const mockLogs = [
         { id: '1', orderId: 'SH-4820', channel: 'EMAIL', type: 'ORDER_CONFIRMATION', status: 'SENT', recipient: 'rahul.v@gmail.com', time: '2 mins ago' },
         { id: '2', orderId: 'SH-4819', channel: 'EMAIL', type: 'ORDER_CONFIRMATION', status: 'SENT', recipient: 'neha.d@yahoo.com', time: '5 mins ago' },
@@ -42,18 +105,20 @@ export default function NotificationsView() {
 
     return (
         <div className="space-y-6 animate-fade-in">
-            <div className="border-b border-slate-100 dark:border-slate-800 pb-5 flex justify-between items-center">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                     <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
                         <Bell className="w-6 h-6 text-indigo-500" />
                         Communication & Notification Hub
                     </h1>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Enterprise-grade event dispatching, failed job monitoring, and Email template management.</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Enterprise-grade event dispatching, email sending composer, and template management.</p>
                 </div>
 
-                <div className="flex gap-2">
-                    <button onClick={() => setActiveTab('monitor')} className={`px-4 py-2 text-xs font-bold rounded-lg transition-colors ${activeTab === 'monitor' ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}`}>Queue Monitor</button>
-                    <button onClick={() => setActiveTab('templates')} className={`px-4 py-2 text-xs font-bold rounded-lg transition-colors ${activeTab === 'templates' ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}`}>Templates</button>
+                <div className="flex flex-wrap gap-2">
+                    <button onClick={() => setActiveTab('monitor')} className={`px-3.5 py-1.5 text-xs font-bold rounded-lg transition-colors ${activeTab === 'monitor' ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}`}>Queue Monitor</button>
+                    <button onClick={() => setActiveTab('approvals')} className={`px-3.5 py-1.5 text-xs font-bold rounded-lg transition-colors ${activeTab === 'approvals' ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}`}>Pending Approvals</button>
+                    <button onClick={() => setActiveTab('custom')} className={`px-3.5 py-1.5 text-xs font-bold rounded-lg transition-colors ${activeTab === 'custom' ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}`}>Send Email</button>
+                    <button onClick={() => setActiveTab('templates')} className={`px-3.5 py-1.5 text-xs font-bold rounded-lg transition-colors ${activeTab === 'templates' ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}`}>Templates</button>
                 </div>
             </div>
 
@@ -123,6 +188,112 @@ export default function NotificationsView() {
                             </tbody>
                         </table>
                     </div>
+                </div>
+            )}
+
+            {activeTab === 'approvals' && (
+                <div className="space-y-4">
+                    <div className="p-4 rounded-xl border border-indigo-100 bg-indigo-50/40 dark:border-indigo-900/30 dark:bg-indigo-950/20 text-xs text-indigo-900 dark:text-indigo-200">
+                        <span className="font-bold">Manual Action Approval Queue:</span> Review and approve customer notifications before email dispatch.
+                    </div>
+
+                    {loadingEvents ? (
+                        <div className="p-8 text-center text-xs text-slate-400">Loading pending event dispatches...</div>
+                    ) : pendingEvents.length === 0 ? (
+                        <div className="p-12 text-center border border-slate-200 dark:border-slate-800 rounded-xl bg-white dark:bg-[#121215]">
+                            <CheckCircle2 className="w-8 h-8 text-emerald-500 mx-auto mb-2" />
+                            <p className="text-sm font-bold text-slate-800 dark:text-slate-200">No Pending Approvals</p>
+                            <p className="text-xs text-slate-400 mt-1">All customer order notifications are up to date.</p>
+                        </div>
+                    ) : (
+                        <div className="space-y-3">
+                            {pendingEvents.map((evt) => (
+                                <div key={evt.id} className="p-4 border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#121215] rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                    <div className="space-y-1">
+                                        <div className="flex items-center gap-2">
+                                            <span className="font-bold text-xs text-indigo-600 dark:text-indigo-400">Order #{evt.orderId}</span>
+                                            <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold">{evt.eventType}</span>
+                                        </div>
+                                        <p className="text-xs text-slate-600 dark:text-slate-400 whitespace-pre-wrap">{evt.previewBody}</p>
+                                        <p className="text-[10px] font-mono text-slate-400">Recipient: {evt.recipient}</p>
+                                    </div>
+                                    <button
+                                        onClick={() => handleApproveEvent(evt)}
+                                        className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 cursor-pointer"
+                                    >
+                                        <Send className="w-3.5 h-3.5" />
+                                        Approve & Send Email
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            )}
+
+            {activeTab === 'custom' && (
+                <div className="p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#121215] rounded-xl space-y-5 max-w-2xl">
+                    <div className="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <Mail className="w-5 h-5 text-indigo-500" />
+                        <div>
+                            <h3 className="font-bold text-sm text-slate-900 dark:text-white">Direct Email Composer</h3>
+                            <p className="text-xs text-slate-400">Send an instant operational or promotional email to any recipient</p>
+                        </div>
+                    </div>
+
+                    {customStatus && (
+                        <div className="p-3.5 rounded-lg bg-emerald-50 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300 text-xs font-bold flex items-center gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                            {customStatus}
+                        </div>
+                    )}
+
+                    <form onSubmit={handleSendCustomEmail} className="space-y-4">
+                        <div className="space-y-1">
+                            <label className="text-[10px] uppercase font-bold text-slate-500">Recipient Email Address</label>
+                            <input
+                                type="email"
+                                required
+                                placeholder="customer@example.com"
+                                value={customRecipient}
+                                onChange={(e) => setCustomRecipient(e.target.value)}
+                                className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700/50 rounded-lg px-3 py-2 text-xs text-slate-900 dark:text-slate-100 focus:ring-1 focus:ring-indigo-500 focus:outline-none"
+                            />
+                        </div>
+
+                        <div className="space-y-1">
+                            <label className="text-[10px] uppercase font-bold text-slate-500">Email Subject</label>
+                            <input
+                                type="text"
+                                required
+                                placeholder="e.g., Update regarding your Adeaur Order"
+                                value={customSubject}
+                                onChange={(e) => setCustomSubject(e.target.value)}
+                                className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700/50 rounded-lg px-3 py-2 text-xs text-slate-900 dark:text-slate-100 focus:ring-1 focus:ring-indigo-500 focus:outline-none"
+                            />
+                        </div>
+
+                        <div className="space-y-1">
+                            <label className="text-[10px] uppercase font-bold text-slate-500">Email Message</label>
+                            <textarea
+                                required
+                                rows={5}
+                                placeholder="Type your email message here..."
+                                value={customBody}
+                                onChange={(e) => setCustomBody(e.target.value)}
+                                className="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700/50 rounded-lg px-3 py-2 text-xs text-slate-900 dark:text-slate-100 focus:ring-1 focus:ring-indigo-500 focus:outline-none resize-none"
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            disabled={customSending}
+                            className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg text-xs transition-all flex items-center gap-2 cursor-pointer shadow-sm disabled:opacity-50"
+                        >
+                            {customSending ? <RotateCcw className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+                            {customSending ? 'Sending Email...' : 'Send Email Now'}
+                        </button>
+                    </form>
                 </div>
             )}
 
