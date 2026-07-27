@@ -22,6 +22,7 @@ import DesignSystemView from './components/DesignSystemView';
 import AnalyticsView from './components/AnalyticsView';
 import NotificationsView from './components/NotificationsView';
 import LoginView from './components/LoginView';
+import SetPasswordView from './components/SetPasswordView';
 
 // Data and Type Imports
 import { categoryShareData, courierPerformanceData, paymentDistributionData } from './data';
@@ -32,6 +33,18 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<string>('dashboard');
   const [sidebarExpanded, setSidebarExpanded] = useState<boolean>(true);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
+  // Detect invitation token in URL query parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const inviteToken = urlParams.get('inviteToken');
+
+  if (inviteToken) {
+    return <SetPasswordView inviteToken={inviteToken} onComplete={() => setIsAuthenticated(true)} />;
+  }
+
+  if (!isAuthenticated) {
+    return <LoginView setAuth={setIsAuthenticated} />;
+  }
 
   // Search query state (propagated from topbar to orders table)
   const [searchQuery, setSearchQuery] = useState<string>('');
