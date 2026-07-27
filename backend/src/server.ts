@@ -27,7 +27,7 @@ const prisma = new PrismaClient();
 async function setupSecurity() {
   await server.register(helmet, { global: true });
   await server.register(cors, {
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: [process.env.FRONTEND_URL || 'http://localhost:3000', 'https://addddd-gray.vercel.app', 'https://addddd-cv76ycxep-kusha.vercel.app', 'https://addddd.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   });
