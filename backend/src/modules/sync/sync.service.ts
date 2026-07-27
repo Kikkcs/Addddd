@@ -1,4 +1,6 @@
 import { PrismaClient } from '@prisma/client';
+import * as fs from 'fs';
+import * as path from 'path';
 import { ShopifyService } from '../shopify/shopify.service.js';
 import { DelhiveryService } from '../delhivery/delhivery.service.js';
 import { GokwikService } from '../gokwik/gokwik.service.js';
@@ -67,8 +69,6 @@ export class SyncService {
             }
 
             // 3. Dump the snapshot securely into a flat-file Data Lake to guarantee performance without crashing if Prisma PG is disabled
-            const fs = require('fs');
-            const path = require('path');
             const snapshotPath = path.resolve(process.cwd(), 'daily_operations_snapshot.json');
             fs.writeFileSync(snapshotPath, JSON.stringify(enrichedOrders, null, 2));
             console.log('[Daily-Sync] Local JSON Lake snapshot completely updated successfully.');

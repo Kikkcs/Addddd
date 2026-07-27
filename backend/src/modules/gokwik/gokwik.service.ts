@@ -1,4 +1,6 @@
-﻿export class GokwikService {
+﻿import * as https from 'https';
+
+export class GokwikService {
     private static instance: GokwikService;
     private readonly apiKey: string;
 
@@ -30,8 +32,6 @@
 
             // Only fire HTTPS requests for new orders (Batching/Throttling protection)
             if (uncachedOrders.length > 0) {
-                const https = require('https');
-
                 await Promise.all(uncachedOrders.map((orderNumber) => {
                     return new Promise<void>((resolve) => {
                         const data = JSON.stringify({ order_id: orderNumber });
