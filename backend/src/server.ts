@@ -4,6 +4,7 @@ import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import helmet from '@fastify/helmet';
 import cors from '@fastify/cors';
 import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcrypt';
 import { shopifyAuthRoutes } from './modules/auth/shopify.auth.js';
 import { localAuthRoutes } from './modules/auth/local.auth.js';
 import { ordersRoutes } from './modules/orders/orders.route.js';
@@ -70,6 +71,18 @@ async function startServer() {
     try {
       await prisma.$connect();
       server.log.info('PostgreSQL connected via Prisma.');
+      // Auto seed default admin user if not existing
+      const hashedPassword = await bcrypt.hash('password123', 10);
+      await prisma.user.upsert({
+        where: { email: 'admin@adeaur.com' },
+        update: {},
+        create: {
+          email: 'admin@adeaur.com',
+          name: 'Adeaur Admin',
+          role: 'ADMIN',
+          password: hashedPassword,
+        },
+      }).catch(err => server.log.warn('Admin auto-seed error: ' + err.message));
     } catch (dbErr) {
       server.log.warn('PostgreSQL not available — DB features disabled. OAuth flow will still work.');
     }
