@@ -37,9 +37,9 @@ export class ShopifyService {
                 }
             };
 
-            const req = https.request(options, (res) => {
+            const req = https.request(options, (res: any) => {
                 let data = '';
-                res.on('data', (chunk) => { data += chunk; });
+                res.on('data', (chunk: any) => { data += chunk; });
                 res.on('end', () => {
                     try {
                         const parsed = JSON.parse(data);
@@ -54,7 +54,7 @@ export class ShopifyService {
                 });
             });
 
-            req.on('error', (err) => reject(new Error(`Network error calling Shopify: ${err.message}`)));
+            req.on('error', (err: any) => reject(new Error(`Network error calling Shopify: ${err.message}`)));
             req.end();
         });
     }

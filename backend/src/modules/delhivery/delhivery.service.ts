@@ -42,9 +42,9 @@ export class DelhiveryService {
                 }
             };
 
-            const req = https.request(options, (res) => {
+            const req = https.request(options, (res: any) => {
                 let data = '';
-                res.on('data', (chunk) => { data += chunk; });
+                res.on('data', (chunk: any) => { data += chunk; });
                 res.on('end', () => {
                     try {
                         const parsed = JSON.parse(data);
@@ -79,7 +79,7 @@ export class DelhiveryService {
                 });
             });
 
-            req.on('error', (err) => reject(err));
+            req.on('error', (err: any) => reject(err));
             req.end();
         });
     }
