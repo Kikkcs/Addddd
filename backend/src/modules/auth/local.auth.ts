@@ -113,7 +113,22 @@ export const localAuthRoutes: FastifyPluginAsync = async (server: FastifyInstanc
 
             const exists = await prisma.user.findUnique({ where: { email } });
             if (exists) {
-                return reply.status(400).send({ success: false, message: 'Email already mapped to an account' });
+                // Re-generate invitation token for existing user
+                const inviteToken = jwt.sign(
+                    { email: exists.email, name: exists.name, role: exists.role, type: 'INVITE' },
+                    process.env.JWT_SECRET || 'fallback_secret',
+                    { expiresIn: '7d' }
+                );
+
+                const origin = request.headers.origin || process.env.FRONTEND_URL || 'http://localhost:5173';
+                const setupLink = `${origin}/?inviteToken=${encodeURIComponent(inviteToken)}`;
+
+                return reply.send({
+                    success: true,
+                    user: exists,
+                    inviteLink: setupLink,
+                    message: `User is already in directory. Generated a fresh password setup link!`
+                });
             }
 
             // Create Invitation Token valid for 7 days

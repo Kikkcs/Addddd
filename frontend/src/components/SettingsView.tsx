@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   Users, Key, ShieldCheck, Mail, Bell, RefreshCw, Plus,
-  Trash2, User, Eye, EyeOff, Save, CheckCircle2, Lock
+  Trash2, User, Eye, EyeOff, Save, CheckCircle2, Lock, Link
 } from 'lucide-react';
 import { User as UserType } from '../types';
 import { API_BASE_URL } from '../config';
@@ -99,6 +99,24 @@ export default function SettingsView() {
       setSaveKeysSuccess(true);
       setTimeout(() => setSaveKeysSuccess(false), 3000);
     }, 1200);
+  };
+
+  const [copiedUserId, setCopiedUserId] = useState<string | null>(null);
+
+  const handleCopyUserLink = async (userEmail: string, userId: string) => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/auth/invite-link?email=${encodeURIComponent(userEmail)}`);
+      const data = await res.json();
+      if (data.success && data.inviteLink) {
+        await navigator.clipboard.writeText(data.inviteLink);
+        setCopiedUserId(userId);
+        setTimeout(() => setCopiedUserId(null), 2500);
+      } else {
+        alert("Failed to generate setup link.");
+      }
+    } catch {
+      alert("Error generating setup link.");
+    }
   };
 
   return (
@@ -219,7 +237,17 @@ export default function SettingsView() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3" id={`user-item-actions-${user.id}`}>
+                  <div className="flex items-center gap-2.5" id={`user-item-actions-${user.id}`}>
+                    <button
+                      type="button"
+                      onClick={() => handleCopyUserLink(user.email, user.id)}
+                      className="px-2 py-1 bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded text-[10px] font-semibold transition-all flex items-center gap-1 cursor-pointer"
+                      title="Copy Password Setup Link for this staff member"
+                    >
+                      <Link className="w-3 h-3 text-indigo-500" />
+                      {copiedUserId === user.id ? 'Copied Link!' : 'Get Setup Link'}
+                    </button>
+
                     <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-400">
                       {user.role}
                     </span>
