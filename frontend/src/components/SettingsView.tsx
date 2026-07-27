@@ -112,7 +112,7 @@ export default function SettingsView() {
             {inviteSuccess && (
               <div className="p-3 rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 text-xs flex items-center gap-2" id="invite-success-alert">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Invitation link compiled and dispatched to new team member!</span>
+                <span>Team member added! Default password assigned: <strong className="font-mono underline">changeme123</strong></span>
               </div>
             )}
 

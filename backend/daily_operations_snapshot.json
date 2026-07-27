@@ -546,7 +546,7 @@
     ],
     "delhivery_status": "Manifested",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7112643543317,
@@ -992,7 +992,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7112185250069,
@@ -1442,7 +1442,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7110624510229,
@@ -1892,7 +1892,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7110329434389,
@@ -2441,7 +2441,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7109627314453,
@@ -5087,7 +5087,7 @@
     ],
     "delhivery_status": "Dispatched",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7108870308117,
@@ -5616,7 +5616,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7107520954645,
@@ -6062,7 +6062,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7107010625813,
@@ -6508,7 +6508,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7106153709845,
@@ -7125,7 +7125,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7106070315285,
@@ -7737,7 +7737,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7106064122133,
@@ -9674,7 +9674,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7104125174037,
@@ -10223,7 +10223,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7103179718933,
@@ -10673,7 +10673,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7103091212565,
@@ -14472,7 +14472,7 @@
     ],
     "delhivery_status": "Dispatched",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7099617181973,
@@ -14922,7 +14922,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7098300301589,
@@ -15822,7 +15822,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7097612337429,
@@ -16939,7 +16939,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7096914510101,
@@ -17389,7 +17389,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7096814698773,
@@ -17934,7 +17934,7 @@
     ],
     "delhivery_status": "Pending",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7096331600149,
@@ -18380,7 +18380,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7096185389333,
@@ -18964,7 +18964,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7094635430165,
@@ -19963,7 +19963,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7093477179669,
@@ -21565,7 +21565,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7092098892053,
@@ -25612,7 +25612,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7086367736085,
@@ -26161,7 +26161,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7085438796053,
@@ -28004,7 +28004,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7082951082261,
@@ -30356,7 +30356,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7081712615701,
@@ -31481,7 +31481,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7081627058453,
@@ -33313,7 +33313,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7080813658389,
@@ -34391,7 +34391,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7078003441941,
@@ -34981,7 +34981,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7077515919637,
@@ -38494,7 +38494,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7074029306133,
@@ -39013,7 +39013,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7073771061525,
@@ -40665,7 +40665,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7064578097429,
@@ -41200,7 +41200,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7059151946005,
@@ -42399,7 +42399,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7058763776277,
@@ -42989,7 +42989,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7058041405717,
@@ -45310,7 +45310,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7056643129621,
@@ -48807,7 +48807,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7054200307989,
@@ -49346,7 +49346,7 @@
     ],
     "delhivery_status": "Pending",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7052901024021,
@@ -49932,7 +49932,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7052618662165,
@@ -51190,7 +51190,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7052322078997,
@@ -53487,7 +53487,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7050368778517,
@@ -56464,7 +56464,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7049103343893,
@@ -57054,7 +57054,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7049049178389,
@@ -58671,7 +58671,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7047716241685,
@@ -59245,7 +59245,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7047390626069,
@@ -60409,7 +60409,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7047253819669,
@@ -61608,7 +61608,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7047008846101,
@@ -62807,7 +62807,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7046907920661,
@@ -64526,7 +64526,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7045742559509,
@@ -66269,7 +66269,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7043947168021,
@@ -66859,7 +66859,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7043873177877,
@@ -67398,7 +67398,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7043582263573,
@@ -67988,7 +67988,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7042399404309,
@@ -69668,7 +69668,7 @@
     ],
     "delhivery_status": "Not Picked",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7041320091925,
@@ -70207,7 +70207,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7040859177237,
@@ -71379,7 +71379,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7039228477717,
@@ -72555,7 +72555,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7037440917781,
@@ -74151,7 +74151,7 @@
     "shipping_lines": [],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7035941552405,
@@ -75342,7 +75342,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7035897086229,
@@ -78230,7 +78230,7 @@
     ],
     "delhivery_status": "Not Picked",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7033498435861,
@@ -78769,7 +78769,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7033419923733,
@@ -79308,7 +79308,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7033292456213,
@@ -82385,7 +82385,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7028941947157,
@@ -84631,7 +84631,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7028030505237,
@@ -85756,7 +85756,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7027481837845,
@@ -87490,7 +87490,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7025855004949,
@@ -88736,7 +88736,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7025598857493,
@@ -91064,7 +91064,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7024393847061,
@@ -92681,7 +92681,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7023875391765,
@@ -96637,7 +96637,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7021573570837,
@@ -97190,7 +97190,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7020702368021,
@@ -97812,7 +97812,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7020084756757,
@@ -98362,7 +98362,7 @@
     ],
     "delhivery_status": "Delivered",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7019751145749,
@@ -100041,7 +100041,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7017839329557,
@@ -102115,7 +102115,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7016593850645,
@@ -103360,7 +103360,7 @@
     ],
     "delhivery_status": "RTO",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7016315486485,
@@ -103913,7 +103913,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7016292024597,
@@ -105017,7 +105017,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7015264551189,
@@ -105570,7 +105570,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7014321094933,
@@ -106072,7 +106072,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7013707251989,
@@ -108179,7 +108179,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7011602989333,
@@ -110861,7 +110861,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Verified"
+    "gokwik_payment": "Pending"
   },
   {
     "id": 7009462812949,
@@ -111414,7 +111414,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7008469975317,
@@ -111915,7 +111915,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7008157303061,
@@ -112416,7 +112416,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7008131088661,
@@ -113520,7 +113520,7 @@
     ],
     "delhivery_status": "In Transit",
     "gokwik_rto_risk": "Low",
-    "gokwik_payment": "Pending"
+    "gokwik_payment": "Verified"
   },
   {
     "id": 7006046519573,
