@@ -162,19 +162,13 @@ export const localAuthRoutes: FastifyPluginAsync = async (server: FastifyInstanc
             const senderAddress = process.env.EMAIL_FROM || (process.env.SMTP_USER ? `"Adeaur Operations" <${process.env.SMTP_USER}>` : '"Adeaur Operations" <updates@adeaur.com>');
 
             // Dispatch email in background so endpoint returns instantly
+            // Dispatch lightweight clean email
             const mailOptions = {
                 from: senderAddress,
                 to: email,
-                subject: 'Invitation to Join Adeaur Operations - Set Up Your Account',
-                html: `
-                    <div style="font-family: sans-serif; max-width: 500px; margin: auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 10px;">
-                        <h2 style="color: #0f172a;">You are invited to join Adeaur Operations</h2>
-                        <p style="color: #475569;">You have been assigned the <strong>${role || 'Support'}</strong> role.</p>
-                        <p style="color: #475569;">Please click the button below to set up your account password of your own choice:</p>
-                        <a href="${setupLink}" style="display: inline-block; padding: 12px 24px; background-color: #4f46e5; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px;">Set Up Your Password</a>
-                        <p style="color: #94a3b8; font-size: 12px; margin-top: 20px;">Link valid for 7 days. If you did not expect this invitation, please ignore this email.</p>
-                    </div>
-                `
+                subject: 'Adeaur Operations Invitation - Set Up Password',
+                text: `Hello,\n\nYou have been invited to join Adeaur Operations (${role || 'Support'} role).\n\nPlease click the link below to set up your password:\n${setupLink}\n\nThis link is valid for 7 days.`,
+                html: `<p>You have been invited to join <strong>Adeaur Operations</strong> (${role || 'Support'} role).</p><p><a href="${setupLink}">Click here to set up your password</a></p><p style="font-size:12px;color:#666;">Or copy link: ${setupLink}</p>`
             };
 
             // Construct live transporter using active process.env
